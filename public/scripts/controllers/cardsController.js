@@ -17,14 +17,13 @@ function CardsController($http) {
 
   function getQuestion(){}
   $http
-    .get ("http://localhost:3000/578414ae4dda540700250522)"
+    .get ("http://localhost:3000/api/cards/)"
     .then(function(response) {
       vm.singleQuestion = response.data;
     });
  
 
   
-
 
 
  

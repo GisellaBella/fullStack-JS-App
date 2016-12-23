@@ -4,10 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Cards Against Assembly™</title>
+<!--         Styles -->
         <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
         <link rel="stylesheet" href="styles/style.css">
+ <!--        Viewport -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!--        Angular -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<!--         App scripts -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/cardsController.js"></script>
         <script src="scripts/cardDirective.js"></script>
@@ -25,6 +29,10 @@
             <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsController.questionsList" >
               <wdi-card question="{{card.question}}"></wdi-card>
             </div>
+            <form ng-submit>
+          <label for="newCard-question">Question: <input type="text" id="newCard-question" ng-model="newCard.question">
+            <div>
+
           </div>
         </section>
       <wdi-card question="Why is Angular so awesome?"></wdi-card>

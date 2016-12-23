@@ -13,6 +13,10 @@ var mongoose 	= require('mongoose');
 
 var db = require('./models');
 
+// Build an HTML form that will allow us to submit a new card through our new POST route. Since this is Angular, you will probably want to use ng-submit.
+// Add a button on each card that allows you to DELETE a card. Connect this to a DELETE route on your back end. (Hint: this one is a little tricky. You will need to pass the delete method from your controller into your cardDirective template. You should look at the Custom Directives Lab for details on how to do this.)
+// Use a form that lets you edit and UPDATE a card. For now, just display it under each card. Try to borrow as much as you can from your work with the form from #1.
+
 
 
 // --------------API ROUTES
@@ -46,8 +50,14 @@ app.post('/', jsonParser, function (req, res){
  });
 
 
-
+// Public Routes
 app.use(express.static(__dirname + '/public'));
+
+
+app.get('/', function(req, res) {
+	res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+
 
 // start server
 app.listen(port, function() {
